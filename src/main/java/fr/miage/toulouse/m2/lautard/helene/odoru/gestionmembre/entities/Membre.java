@@ -16,7 +16,7 @@ import javax.persistence.*;
 public class Membre {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long numMembre;
 
     @NotNull

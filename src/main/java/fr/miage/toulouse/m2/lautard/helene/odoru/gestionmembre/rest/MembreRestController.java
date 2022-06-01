@@ -13,8 +13,8 @@ public class MembreRestController {
     @Autowired
     GestionMembre gestionMembre;
 
-    @GetMapping("/")
-    public String index(){
-        return "coucou";
+    @GetMapping("")
+    public Iterable getMembres(){
+        return this.gestionMembre.listerMembres();
     }
 }

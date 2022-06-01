@@ -1,4 +1,4 @@
-INSERT IGNORE INTO membre VALUES (1, 'secretaire', 'GIRARDET', 'Anthony', 'girardeta@odoru.fr', 'aqsxdrftyhgfd', 'Montreal La Cluse', 'Canada', 1,'EN_REGLE', 'COMPLET', 'APTE');
-INSERT IGNORE INTO membre VALUES (2, 'president', 'LAJOINIE', 'Juliette', 'lajoiniej@odoru.fr', 'aqsxdrftyhgfd', 'Toulouse', 'France', 5, 'EN_REGLE', 'COMPLET', 'APTE');
-INSERT IGNORE INTO membre VALUES (3, 'enseignant', 'LAUTARD', 'Hélène', 'lautardh@odoru.fr', 'aqsxdrftyhgfd', 'Toulouse', 'France', 5, 'EN_REGLE', 'COMPLET', 'APTE');
-INSERT IGNORE INTO membre VALUES (4, 'adherent', 'TORGUET', 'Patrice', 'torguetp@odoru.fr', 'aqsxdrftyhgfd', 'Toulouse', 'France', 1, 'RETARD_DE_PAIEMENT', 'INCOMPLET', 'APTE');
+INSERT IGNORE INTO membre VALUES (1, 'SECRETAIRE', 'GIRARDET', 'Anthony', 'girardeta@odoru.fr', 'aqsxdrftyhgfd', 'Montreal La Cluse', 'Canada', 1,'EN_REGLE', 'COMPLET', 'APTE');
+INSERT IGNORE INTO membre VALUES (2, 'PRESIDENT', 'LAJOINIE', 'Juliette', 'lajoiniej@odoru.fr', 'aqsxdrftyhgfd', 'Toulouse', 'France', 5, 'EN_REGLE', 'COMPLET', 'APTE');
+INSERT IGNORE INTO membre VALUES (3, 'ENSEIGNANT', 'LAUTARD', 'Hélène', 'lautardh@odoru.fr', 'aqsxdrftyhgfd', 'Toulouse', 'France', 5, 'EN_REGLE', 'COMPLET', 'APTE');
+INSERT IGNORE INTO membre VALUES (4, 'ADHERENT', 'TORGUET', 'Patrice', 'torguetp@odoru.fr', 'aqsxdrftyhgfd', 'Toulouse', 'France', 1, 'RETARD_DE_PAIEMENT', 'INCOMPLET', 'APTE');
