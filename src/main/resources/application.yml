@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: gestionMembre
+  datasource:
+    url: jdbc:mysql://localhost:3306/membre
+    username: root
+    password: root
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      ddl-auto: none
+  sql:
+    init:
+      mode: always
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+
+logging:
+  level:
+    org.springframework.web: INFO
+server:
+  port: 10000
