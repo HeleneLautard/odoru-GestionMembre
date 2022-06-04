@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import javax.transaction.TransactionManager;
+
 @SpringBootApplication
 @EnableDiscoveryClient
 public class GestionMembreApplication {
@@ -15,6 +17,7 @@ public class GestionMembreApplication {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
 
     public static void main(String[] args) {
         SpringApplication.run(GestionMembreApplication.class, args);

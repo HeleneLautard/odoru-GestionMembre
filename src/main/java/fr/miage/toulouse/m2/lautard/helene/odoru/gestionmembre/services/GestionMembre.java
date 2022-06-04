@@ -48,4 +48,21 @@ public interface GestionMembre {
      */
     Iterable<Membre> listerMembres();
 
+    /**
+     * Vérifier le statut d'inscription d'un membre
+     * @param num_membre numéro d'identification
+     * @return Etat de son inscription
+     * @throws MembreNotFoundException
+     */
+    String getStatutInscription(Long num_membre) throws MembreNotFoundException;
+
+    /**
+     * Modifier le statut d'un membre
+     * @param num_membre numéro d'identification du membre
+     * @param newStatut nouveau statut
+     * @return Membre mis à jour
+     * @throws MembreNotFoundException
+     */
+    Membre updateStatut(Long num_membre, String newStatut) throws MembreNotFoundException;
+
 }
