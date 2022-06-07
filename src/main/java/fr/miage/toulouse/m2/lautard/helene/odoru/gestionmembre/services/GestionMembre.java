@@ -81,4 +81,18 @@ public interface GestionMembre {
      * @throws MembreNotFoundException
      */
     Optional<Adherent> updateAdherent(Long id, Adherent newAdherent) throws MembreNotFoundException;
+
+    /**
+     * Renvoyer l'ensemble des enseignants
+     * @return liste des enseignants
+     */
+    Iterable<Enseignant> listerEnseignant();
+
+    /**
+     * Mise à jour des informations d'un enseignant
+     * @param id
+     * @param newEnseignant
+     * @return
+     */
+    Optional<Enseignant> updateEnseignant(Long id, Enseignant newEnseignant) throws MembreNotFoundException;
 }

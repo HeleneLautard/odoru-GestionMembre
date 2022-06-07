@@ -137,4 +137,35 @@ public class GestionMembreImpl implements GestionMembre {
 
     }
 
+    @Override
+    public Iterable<Enseignant> listerEnseignant() {
+        return this.enseignantRepository.findAll();
+    }
+
+    @Override
+    public Optional<Enseignant> updateEnseignant(Long id, Enseignant newEnseignant) throws MembreNotFoundException {
+        try {
+            this.getMembre(id);
+            return this.enseignantRepository.findById(id)
+                    .map(enseignant -> {
+
+                        if (newEnseignant.getAptitudeMedicale() != null) {
+                            enseignant.setAptitudeMedicale(newEnseignant.getAptitudeMedicale());
+                        }
+                        if (newEnseignant.getStatutPaiement() != null) {
+                            enseignant.setStatutPaiement(newEnseignant.getStatutPaiement());
+                        }
+                        if (newEnseignant.getStatutInscription() != null) {
+                            enseignant.setStatutInscription(newEnseignant.getStatutInscription());
+                        }
+                        if (enseignant.getNiveau() != newEnseignant.getNiveau() && (newEnseignant.getNiveau() > 0 && newEnseignant.getNiveau() <= 5)) {
+                            enseignant.setNiveau(newEnseignant.getNiveau());
+                        }
+                        return this.enseignantRepository.save(enseignant);
+                    });
+        } catch (MembreNotFoundException exp) {
+            throw new MembreNotFoundException("L'enseignant n'existe pas");
+        }
+    }
+
 }
