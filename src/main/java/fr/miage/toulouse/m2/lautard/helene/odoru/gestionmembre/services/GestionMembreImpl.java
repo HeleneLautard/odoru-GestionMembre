@@ -11,6 +11,7 @@ import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.Optional;
 
 @Service
 public class GestionMembreImpl implements GestionMembre {
@@ -103,6 +104,37 @@ public class GestionMembreImpl implements GestionMembre {
         } catch(MembreNotFoundException e){
             throw new MembreNotFoundException("Le membre n'existe pas");
         }
+    }
+
+    @Override
+    public Iterable<Adherent> listerAdherent() {
+        return this.adherentRepository.findAll();
+    }
+
+    @Override
+    public Optional<Adherent> updateAdherent(Long id, Adherent newAdherent) throws MembreNotFoundException {
+       try {
+           this.getMembre(id);
+           return this.adherentRepository.findById(id)
+                        .map(adherent -> {
+                            if (newAdherent.getStatutInscription() != null) {
+                                adherent.setStatutInscription(newAdherent.getStatutInscription());
+                            }
+                            if (newAdherent.getAptitudeMedicale() != null) {
+                                adherent.setAptitudeMedicale(newAdherent.getAptitudeMedicale());
+                            }
+                            if (newAdherent.getStatutPaiement() != null) {
+                                adherent.setStatutPaiement(newAdherent.getStatutPaiement());
+                            }
+                            if (newAdherent.getNiveau() != adherent.getNiveau() && (newAdherent.getNiveau() > 0 && newAdherent.getNiveau() <= 5)) {
+                                adherent.setNiveau(newAdherent.getNiveau());
+                            }
+                            return this.adherentRepository.save(adherent);
+                        });
+            } catch (MembreNotFoundException exp) {
+                throw new MembreNotFoundException("L'adhérent n'existe pas");
+            }
+
     }
 
 }

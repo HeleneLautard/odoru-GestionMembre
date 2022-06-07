@@ -3,6 +3,8 @@ package fr.miage.toulouse.m2.lautard.helene.odoru.gestionmembre.services;
 import fr.miage.toulouse.m2.lautard.helene.odoru.gestionmembre.entities.*;
 import fr.miage.toulouse.m2.lautard.helene.odoru.gestionmembre.exceptions.MembreNotFoundException;
 
+import java.util.Optional;
+
 
 public interface GestionMembre {
 
@@ -65,4 +67,18 @@ public interface GestionMembre {
      */
     Membre updateStatut(Long num_membre, String newStatut) throws MembreNotFoundException;
 
+    /**
+     * Lister tous les adherents du système
+     * @return Liste des adherents
+     */
+    Iterable<Adherent> listerAdherent();
+
+    /**
+     * Mise à jour des informations d'un adhérent
+     * @param id identifiant de l'adherent dont on veut modifier les informations
+     * @param newAdherent nouvelles informations
+     * @return adherent mis à jour
+     * @throws MembreNotFoundException
+     */
+    Optional<Adherent> updateAdherent(Long id, Adherent newAdherent) throws MembreNotFoundException;
 }
