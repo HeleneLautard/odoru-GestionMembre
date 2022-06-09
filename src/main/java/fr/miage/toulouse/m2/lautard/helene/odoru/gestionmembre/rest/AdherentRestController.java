@@ -54,6 +54,7 @@ public class AdherentRestController {
     }
 
     // TO DO : Gestion des rôles (uniquement secrétaire)
+    @PutMapping(path = "/{id}")
     public Optional<Adherent> updateAdherent(@PathVariable("id") Long id, @RequestBody final Adherent newAdherent) {
         try {
             return this.gestionMembre.updateAdherent(id, newAdherent);
@@ -61,5 +62,10 @@ public class AdherentRestController {
             throw new ResponseStatusException(
                     HttpStatus.NOT_FOUND, e.getMessage(), e);
         }
+    }
+
+    @GetMapping("/niveau/{niveau}")
+    public Iterable<Adherent> getAdherentByNiveau(@PathVariable("niveau") int niveau){
+        return this.gestionMembre.getAdherentByNiveau(niveau);
     }
 }

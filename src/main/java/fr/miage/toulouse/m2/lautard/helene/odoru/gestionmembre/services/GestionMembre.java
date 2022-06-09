@@ -95,4 +95,11 @@ public interface GestionMembre {
      * @return
      */
     Optional<Enseignant> updateEnseignant(Long id, Enseignant newEnseignant) throws MembreNotFoundException;
+
+    /**
+     * Récupérer tous les adhérents pour un niveau donné
+     * @param niveau niveau recherché
+     * @return
+     */
+    Iterable<Adherent> getAdherentByNiveau(int niveau);
 }
