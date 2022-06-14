@@ -170,7 +170,7 @@ public class GestionMembreImpl implements GestionMembre {
 
     @Override
     public Iterable<Adherent> getAdherentByNiveau(int niveau) {
-        return this.adherentRepository.getAdherentByNiveau(niveau);
+        return this.adherentRepository.getAdherentsByNiveau(niveau);
     }
 
 }

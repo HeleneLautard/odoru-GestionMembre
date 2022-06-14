@@ -8,5 +8,5 @@ import java.util.List;
 @Repository
 public interface AdherentRepository extends MembreBaseRepository<Adherent> {
 
-    public List<Adherent> getAdherentByNiveau(int niveau);
+    public List<Adherent> getAdherentsByNiveau(int niveau);
 }
